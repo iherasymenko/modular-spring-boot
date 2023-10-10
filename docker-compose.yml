@@ -1,0 +1,11 @@
+services:
+  mysql:
+    image: "mysql:8.1.0"
+    command: --disable-log-bin
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: demo
+      MYSQL_USER: demo
+      MYSQL_PASSWORD: demo
+    ports:
+      - "3306:3306"
