@@ -7,6 +7,7 @@ version = '0.0.1-SNAPSHOT'
 
 application {
     mainClass = 'com.example.demo.DemoApplication'
+    mainModule = 'demo.main'
 }
 
 dependencies {
