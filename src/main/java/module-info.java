@@ -3,4 +3,6 @@ module demo.main {
     requires java.sql;
     requires spring.boot.autoconfigure;
     requires spring.boot;
+
+    opens com.example.demo to spring.core, spring.beans;
 }
