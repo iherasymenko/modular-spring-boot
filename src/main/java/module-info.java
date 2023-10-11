@@ -6,5 +6,7 @@ module demo.main {
 
     requires com.zaxxer.hikari;
 
+    requires org.apache.tomcat.embed.core;
+
     opens com.example.demo to spring.core, spring.beans;
 }
