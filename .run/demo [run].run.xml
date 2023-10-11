@@ -6,6 +6,7 @@
           <entry key="SPRING_DATASOURCE_PASSWORD" value="demo" />
           <entry key="SPRING_DATASOURCE_URL" value="jdbc:mysql://localhost:3306/demo" />
           <entry key="SPRING_DATASOURCE_USERNAME" value="demo" />
+          <entry key="SPRING_MAIN_KEEP_ALIVE" value="true" />
         </map>
       </option>
       <option name="executionName" />
