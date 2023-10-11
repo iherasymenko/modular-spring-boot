@@ -25,6 +25,7 @@ tasks.withType(JavaCompile).configureEach { task ->
 }
 
 extraJavaModuleInfo {
+    failOnAutomaticModules = true
     module("com.mysql:mysql-connector-j", "mysql.connector.j") {
         closeModule()
         requiresTransitive("java.sql")
