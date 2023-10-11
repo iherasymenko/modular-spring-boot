@@ -1,6 +1,7 @@
 plugins {
     id 'application'
     id 'org.gradlex.extra-java-module-info' version '1.7'
+    id 'com.github.iherasymenko.jlink' version '0.6'
 }
 
 group = 'com.example'
