@@ -7,6 +7,8 @@ module demo.main {
     requires com.zaxxer.hikari;
 
     requires org.apache.tomcat.embed.core;
+    requires com.fasterxml.jackson.databind;
 
-    opens com.example.demo to spring.core, spring.beans;
+    opens com.example.demo to
+            spring.core, spring.beans, spring.web, com.fasterxml.jackson.databind;
 }
