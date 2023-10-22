@@ -1,0 +1,10 @@
+### With classpath
+POST http://localhost:9090/rce_demo
+
+new com.example.demo.SecretService().getSecret()
+
+### With module path
+POST http://localhost:8080/rce_demo
+
+new com.example.demo.SecretService().getSecret()
+

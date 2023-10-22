@@ -48,6 +48,12 @@ dependencies {
     runtimeOnly 'com.mysql:mysql-connector-j'
 }
 
+tasks.register('runOnClasspath', JavaExec) { task ->
+    task.group = 'application'
+    task.classpath = sourceSets.main.runtimeClasspath
+    task.mainClass = 'com.example.demo.DemoApplication'
+}
+
 tasks.withType(JavaCompile).configureEach { task ->
     task.options.release = 21
     task.options.compilerArgs += '-parameters'
