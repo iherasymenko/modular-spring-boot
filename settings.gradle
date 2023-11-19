@@ -2,6 +2,18 @@ rootProject.name = 'demo'
 
 dependencyResolutionManagement {
     repositories {
+        ivy {
+            url = uri("https://cdn.azul.com/zulu/bin/")
+            patternLayout {
+                artifact "[artifact].[ext]"
+            }
+            metadataSources {
+                artifact()
+            }
+            content {
+                includeGroup("com.azul.cdn")
+            }
+        }
         mavenCentral()
     }
 }

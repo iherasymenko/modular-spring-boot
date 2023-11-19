@@ -18,6 +18,25 @@ jlinkApplication {
     noManPages = true
 }
 
+jlinkImages {
+    linuxX64 {
+        group = 'com.azul.cdn'
+        jdkArchive = 'zulu21.32.17-ca-jdk21.0.2-linux_x64.zip'
+    }
+    winX64 {
+        group = 'com.azul.cdn'
+        jdkArchive = 'zulu21.32.17-ca-jdk21.0.2-win_x64.zip'
+    }
+    macosxX64 {
+        group = 'com.azul.cdn'
+        jdkArchive = 'zulu21.32.17-ca-jdk21.0.2-macosx_x64.tar.gz'
+    }
+    macosxAarch64 {
+        group = 'com.azul.cdn'
+        jdkArchive = 'zulu21.32.17-ca-jdk21.0.2-macosx_aarch64.tar.gz'
+    }
+}
+
 dependencies {
     implementation platform('org.springframework.boot:spring-boot-dependencies:3.2.1')
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
