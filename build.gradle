@@ -19,6 +19,10 @@ jlinkApplication {
 }
 
 jlinkImages {
+    linuxX64Semeru {
+        group = 'com.ibm.semeru.cdn'
+        jdkArchive = 'ibm-semeru-open-jdk_x64_linux_21.0.1_12_openj9-0.42.0.tar.gz'
+    }
     linuxX64 {
         group = 'com.azul.cdn'
         jdkArchive = 'zulu21.32.17-ca-jdk21.0.2-linux_x64.zip'
@@ -47,6 +51,14 @@ dependencies {
 tasks.withType(JavaCompile).configureEach { task ->
     task.options.release = 21
     task.options.compilerArgs += '-parameters'
+}
+
+//noinspection UnnecessaryQualifiedReference
+tasks.named('imageLinuxX64Semeru', com.github.iherasymenko.jlink.JlinkImageTask) { task ->
+    task.javaLauncher = javaToolchains.launcherFor {
+        languageVersion = JavaLanguageVersion.of(21)
+        vendor = JvmVendorSpec.IBM
+    }
 }
 
 extraJavaModuleInfo {
@@ -325,7 +337,6 @@ extraJavaModuleInfo {
         requiresTransitive("java.xml")
         requiresTransitive("jdk.unsupported")
         requiresTransitive("spring.jcl")
-        requires("jdk.jfr")
         exports("org.springframework.aot")
         exports("org.springframework.aot.generate")
         exports("org.springframework.aot.hint")

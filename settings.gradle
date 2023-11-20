@@ -1,3 +1,7 @@
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.7.0'
+}
+
 rootProject.name = 'demo'
 
 dependencyResolutionManagement {
@@ -12,6 +16,18 @@ dependencyResolutionManagement {
             }
             content {
                 includeGroup("com.azul.cdn")
+            }
+        }
+        ivy {
+            url = uri("https://github.com/ibmruntimes/semeru21-binaries/releases/download/jdk-21.0.1+12_openj9-0.42.0/")
+            patternLayout {
+                artifact "[artifact].[ext]"
+            }
+            metadataSources {
+                artifact()
+            }
+            content {
+                includeGroup("com.ibm.semeru.cdn")
             }
         }
         mavenCentral()
