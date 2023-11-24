@@ -52,7 +52,7 @@ extraJavaModuleInfo {
         exports("io.micrometer.observation.contextpropagation")
         exports("io.micrometer.observation.docs")
         exports("io.micrometer.observation.transport")
-        // ignoreServiceProvider("io.micrometer.context.ThreadLocalAccessor")
+        ignoreServiceProvider("io.micrometer.context.ThreadLocalAccessor")
     }
     module("org.springframework:spring-aop", "spring.aop") {
         closeModule()
@@ -245,7 +245,7 @@ extraJavaModuleInfo {
         exports("org.springframework.util.function")
         exports("org.springframework.util.unit")
         exports("org.springframework.util.xml")
-        // ignoreServiceProvider("reactor.blockhound.integration.BlockHoundIntegration")
+        ignoreServiceProvider("reactor.blockhound.integration.BlockHoundIntegration")
     }
     module("org.springframework:spring-expression", "spring.expression") {
         closeModule()
@@ -399,7 +399,7 @@ extraJavaModuleInfo {
         exports("org.springframework.web.util")
         exports("org.springframework.web.util.pattern")
         // ignoreServiceProvider("jakarta.servlet.ServletContainerInitializer")
-        // ignoreServiceProvider("reactor.blockhound.integration.BlockHoundIntegration")
+        ignoreServiceProvider("reactor.blockhound.integration.BlockHoundIntegration")
     }
     module("org.springframework:spring-webmvc", "spring.webmvc") {
         closeModule()
