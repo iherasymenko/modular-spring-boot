@@ -402,7 +402,7 @@ extraJavaModuleInfo {
         ignoreServiceProvider("reactor.blockhound.integration.BlockHoundIntegration")
     }
     module("org.springframework:spring-webmvc", "spring.webmvc") {
-        closeModule()
+        // closeModule()
         requiresTransitive("com.fasterxml.jackson.core")
         requiresTransitive("com.fasterxml.jackson.databind")
         requiresTransitive("java.desktop")
@@ -446,7 +446,7 @@ extraJavaModuleInfo {
         exports("org.springframework.web.servlet.view.xslt")
     }
     module("org.springframework.boot:spring-boot", "spring.boot") {
-        closeModule()
+        // closeModule()
         requiresTransitive("ch.qos.logback.classic")
         requiresTransitive("ch.qos.logback.core")
         requiresTransitive("com.fasterxml.jackson.core")
@@ -559,7 +559,7 @@ extraJavaModuleInfo {
         // ignoreServiceProvider("org.apache.logging.log4j.util.PropertySource")
     }
     module("org.springframework.boot:spring-boot-autoconfigure", "spring.boot.autoconfigure") {
-        closeModule()
+        // closeModule()
         requiresTransitive("com.fasterxml.jackson.annotation")
         requiresTransitive("com.fasterxml.jackson.core")
         requiresTransitive("com.fasterxml.jackson.databind")
