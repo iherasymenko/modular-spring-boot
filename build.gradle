@@ -125,6 +125,22 @@ extraJavaModuleInfo {
 
         uses("org.apache.juli.logging.Log")
     }
+    module("org.apache.logging.log4j:log4j-api", "org.apache.logging.log4j") {
+        patchRealModule() // Refer to the commit message for details
+        closeModule()
+        requiresStatic("java.management")
+        requiresStatic("java.sql")
+        requiresStatic("org.osgi.core")
+        exports("org.apache.logging.log4j")
+        exports("org.apache.logging.log4j.message")
+        exports("org.apache.logging.log4j.simple")
+        exports("org.apache.logging.log4j.spi")
+        exports("org.apache.logging.log4j.status")
+        exports("org.apache.logging.log4j.util")
+        uses('org.apache.logging.log4j.message.ThreadDumpMessage$ThreadInfoFactory')
+        uses("org.apache.logging.log4j.spi.Provider")
+        uses("org.apache.logging.log4j.util.PropertySource")
+    }
     module("com.mysql:mysql-connector-j", "mysql.connector.j") {
         closeModule()
         requiresTransitive("java.sql")
